@@ -14,26 +14,12 @@
 		<url-pattern>/HelloWorld</url-pattern>
 	</servlet-mapping>
 
-	<filter>
-		<filter-name>HelloWorldFilter</filter-name>
-		<filter-class>custom.mycore.filter.HelloWorldFilter</filter-class>
-		<init-param>
-			<param-name>my-param</param-name>
-			<param-value>my-param-value</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>HelloWorldFilter</filter-name>
-		<url-pattern>/HelloWorld/*</url-pattern>
-	</filter-mapping>
-
-	<filter>
-		<filter-name>CustomJSFilter</filter-name>
-		<filter-class>custom.mycore.filter.CustomJSFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>CustomJSFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
+<!-- 	<filter> -->
+<!-- 		<filter-name>BeforeAfterFilter</filter-name> -->
+<!-- 		<filter-class>custom.mycore.filter.BeforeAfterFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>BeforeAfterFilter</filter-name> -->
+<!-- 		<url-pattern>/HelloWorld</url-pattern> -->
+<!-- 	</filter-mapping> -->
 </web-fragment>
