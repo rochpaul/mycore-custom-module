@@ -9,6 +9,7 @@ import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
@@ -41,7 +42,7 @@ public class StylesheetFilterExample implements Filter {
 		 * -> Modify MCRAutoDeploy for set init-param elements in
 		 * web-fragment.xml
 		 */
-		String xsltPath = "/xslt/HelloWorld.xslt";
+		String xsltPath = "/xslt/HelloWorld.xsl";
 
 		// if (xsltPath == null) {
 		// throw new UnavailableException(
@@ -83,22 +84,27 @@ public class StylesheetFilterExample implements Filter {
 			chain.doFilter(req, res);
 			return;
 		}
+		
+		ServletOutputStream output = responseWrapper.getOutputStream();
 
 		try {
 
 			/*
-			 * xsl transformation rocess
+			 * xsl transformation process
 			 */
 			Transformer trans = StylesheetCache.newTransformer(this.xsltFileName);
-
+			LOGGER.info("Start to transform stylsheet: " + this.xsltFileName);
+			
 			ByteArrayInputStream origXMLIn = new ByteArrayInputStream(origXML);
 			Source xmlSource = new StreamSource(origXMLIn);
 
 			ByteArrayOutputStream resultBuf = new ByteArrayOutputStream();
+			
 			trans.transform(xmlSource, new StreamResult(resultBuf));
-
+			LOGGER.info("Transformation process complete.");
+			
 			res.setContentLength(resultBuf.size());
-			res.setContentType("text/html");
+			//res.setContentType("text/html");
 			res.getOutputStream().write(resultBuf.toByteArray());
 			res.flushBuffer();
 		} catch (TransformerException te) {

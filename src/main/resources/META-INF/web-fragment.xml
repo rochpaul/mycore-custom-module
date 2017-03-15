@@ -23,12 +23,12 @@
 	<!-- <url-pattern>/HelloWorld</url-pattern> -->
 	<!-- </filter-mapping> -->
 
-	<!-- <filter> -->
-	<!-- <filter-name>StylesheetFilter</filter-name> -->
-	<!-- <filter-class>custom.mycore.filter.StylesheetFilterExample</filter-class> -->
-	<!-- </filter> -->
-	<!-- <filter-mapping> -->
-	<!-- <filter-name>StylesheetFilter</filter-name> -->
-	<!-- <url-pattern>/editor/editor-admins.xed</url-pattern> -->
-	<!-- </filter-mapping> -->
+<!-- 	<filter> -->
+<!-- 		<filter-name>StylesheetFilter</filter-name> -->
+<!-- 		<filter-class>custom.mycore.filter.StylesheetFilterExample</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>StylesheetFilter</filter-name> -->
+<!-- 		<url-pattern>/editor/editor-admins.xed</url-pattern> -->
+<!-- 	</filter-mapping> -->
 </web-fragment>
