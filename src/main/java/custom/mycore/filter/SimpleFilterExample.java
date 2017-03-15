@@ -9,9 +9,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
-import custom.mycore.filter.helper.GenericResponseWrapper;
+import custom.mycore.filter.util.GenericResponseWrapper;
 
-public class BeforeAfterFilter extends CustomGenericFilter {
+public class SimpleFilterExample extends CustomGenericFilter {
 
 	public void doFilter(final ServletRequest request, final ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {

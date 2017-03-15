@@ -1,4 +1,4 @@
-package custom.mycore.filter.helper;
+package custom.mycore.filter.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
