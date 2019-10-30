@@ -2,7 +2,9 @@ package custom.mycore;
 
 import javax.servlet.ServletContext;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.mycore.common.events.MCRStartupHandler.AutoExecutable;
 
 /**
@@ -20,7 +22,7 @@ public class CustomStartupHandler implements AutoExecutable {
 
 	private static final String HANDLER_NAME = CustomStartupHandler.class.getName();
 
-	private static final Logger LOGGER = Logger.getLogger(CustomStartupHandler.class);
+	private static final Logger LOGGER = LogManager.getLogger(CustomStartupHandler.class);
 
 	@Override
 	public String getName() {

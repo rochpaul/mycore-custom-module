@@ -21,14 +21,15 @@ import javax.xml.transform.stream.StreamSource;
 
 import custom.mycore.filter.xsltutil.BufferedHttpResponseWrapper;
 import custom.mycore.filter.xsltutil.StylesheetCache;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Use xslt stylesheet with servlet filter
  */
 public class StylesheetFilterExample implements Filter {
 
-	private static Logger LOGGER = Logger.getLogger(StylesheetFilterExample.class);
+    private static final Logger LOGGER = LogManager.getLogger(StylesheetFilterExample.class);
 
 	private FilterConfig filterConfig;
 	private String xsltFileName;

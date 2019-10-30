@@ -7,8 +7,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  * 
  * Response wrapper
@@ -16,7 +16,7 @@ import org.apache.log4j.Logger;
  */
 public class BufferedHttpResponseWrapper extends HttpServletResponseWrapper {
 
-	private static Logger LOGGER = Logger.getLogger(BufferedHttpResponseWrapper.class);
+    private static final Logger LOGGER = LogManager.getLogger(BufferedHttpResponseWrapper.class);
 
 	private BufferedServletOutputStream bufferedServletOut = new BufferedServletOutputStream();
 
